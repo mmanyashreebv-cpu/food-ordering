@@ -86,7 +86,7 @@ def reserve(req: ReserveIn):
         if item is None:
             raise HTTPException(status_code=404, detail="Item not found")
         if item.stock < req.quantity:
-            raise HTTPException(status_code=400, detail="Not enough stock")
+            raise HTTPException(status_code=400, detail="Out ofstock")
         item.stock -= req.quantity
         s.commit()
         return {"item_id": item.id, "name": item.name, "remaining_stock": item.stock}
