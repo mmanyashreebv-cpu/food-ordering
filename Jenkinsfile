@@ -19,6 +19,22 @@ pipeline {
             }
         }
 
+        stage('Test') {
+            steps {
+                bat 'if not exist .venv ( python -m venv .venv )'
+                bat '.venv\\Scripts\\python -m pip install --quiet fastapi uvicorn sqlalchemy httpx bcrypt pytest'
+                dir('services/user-service') {
+                    bat '..\\..\\.venv\\Scripts\\python -m pytest -q'
+                }
+                dir('services/inventory-service') {
+                    bat '..\\..\\.venv\\Scripts\\python -m pytest -q'
+                }
+                dir('services/order-service') {
+                    bat '..\\..\\.venv\\Scripts\\python -m pytest -q'
+                }
+            }
+        }
+
         stage('Build images') {
             steps {
                 bat 'minikube image build -t user-service:%TAG% services/user-service'
