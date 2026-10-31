@@ -6,6 +6,9 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 # Configuration comes from an environment variable, with a local default
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./inventory.db")
+# Use the psycopg2 driver explicitly (newer SQLAlchemy defaults to a different one)
+if DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+psycopg2://", 1)
 connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
 
 engine = create_engine(DATABASE_URL, connect_args=connect_args)
