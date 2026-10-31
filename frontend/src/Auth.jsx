@@ -8,7 +8,7 @@ const ROLES = [
 ];
 
 const COPY = {
-  customer: { title: "Good food, on its way.", text: "Browse kitchens, fill your cart and track your delivery." },
+  customer: { title: "Good food, on its way.", text: "Browse kitchens, fill your cart and track your delivery live." },
   owner: { title: "Run your kitchen with confidence.", text: "Manage orders, watch stock and keep an eye on every service." },
 };
 
