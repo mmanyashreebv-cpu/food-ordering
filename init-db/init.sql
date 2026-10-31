@@ -1,0 +1,5 @@
+
+CREATE DATABASE users;
+CREATE DATABASE inventory;
+CREATE DATABASE orders;
+

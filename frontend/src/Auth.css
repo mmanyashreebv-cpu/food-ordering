@@ -1,0 +1,30 @@
+.au { min-height: 100vh; display: grid; grid-template-columns: 1.1fr 1fr; color: #1f1d2b; color-scheme: light; font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif; }
+.au *, .au *::before, .au *::after { box-sizing: border-box; }
+.au-art { padding: 56px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.au-art.customer { background: linear-gradient(135deg, #fff0e5, #ffd7bd); }
+.au-art.owner { background: #1b1a2e; color: #fff; }
+.au-brand { font-family: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif; font-weight: 700; font-size: 1.3rem; }
+.au-art h1 { font-family: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.1; margin: 0; max-width: 16ch; }
+.au-art p { font-size: 1.1rem; margin: 0; max-width: 36ch; opacity: 0.8; }
+.au-side { background: #fff; display: flex; align-items: center; justify-content: center; padding: 32px; }
+.au-side form { width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 14px; }
+.au-side h2 { font-family: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif; font-size: 1.7rem; margin: 6px 0 0; }
+.au-sub { margin: -8px 0 0; color: #7a7684; }
+.au-roles { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: #f3f0ec; padding: 4px; border-radius: 12px; }
+.au-roles button { border: 0; background: none; padding: 10px; border-radius: 9px; font: inherit; font-weight: 600; color: #7a7684; cursor: pointer; }
+.au-roles button.on { background: #fff; color: #1f1d2b; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18); }
+.au-side label { display: flex; flex-direction: column; gap: 6px; font-weight: 500; font-size: 0.93rem; }
+.au-side input { padding: 11px 13px; border: 1.5px solid #ece6df; border-radius: 12px; font: inherit; background: #fff; color: #1f1d2b; }
+.au-side input:focus { border-color: #ee6c2b; outline: none; box-shadow: 0 0 0 3px #fff0e5; }
+.au-hint { color: #7a7684; font-size: 0.82rem; font-weight: 400; }
+.au-error { color: #d6382b; margin: 0; font-size: 0.92rem; }
+.au-btn { padding: 12px 18px; border: 0; border-radius: 12px; background: #ee6c2b; color: #fff; font: inherit; font-weight: 700; font-size: 1rem; cursor: pointer; }
+.au-btn:hover:not(:disabled) { background: #cf5518; }
+.au-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.au-switch { text-align: center; color: #7a7684; margin: 0; }
+.au-link { background: none; border: 0; padding: 0; color: #cf5518; font: inherit; font-weight: 700; text-decoration: underline; cursor: pointer; }
+.au :focus-visible { outline: 3px solid #ee6c2b; outline-offset: 2px; }
+@media (max-width: 900px) {
+  .au { grid-template-columns: 1fr; }
+  .au-art { padding: 28px 24px; }
+}
